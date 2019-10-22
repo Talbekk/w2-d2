@@ -20,8 +20,9 @@ class BusRouteTest < MiniTest::Test
   end
 
   def test_pick_up()
-    @bus.pick_up(@passenger1, @passenger2)
+    @bus.pick_up(@passenger1)
     assert_equal(2, @bus.number_of_passengers)
+    #.delete_at[i], .slice!(i, 1),
   end
 
   def test_drop_off
@@ -32,5 +33,7 @@ class BusRouteTest < MiniTest::Test
   def test_remove_all_passengers
     @bus.remove_all_passengers
     assert_equal(0, @bus.number_of_passengers)
-  end 
+  end
+
+  
 end

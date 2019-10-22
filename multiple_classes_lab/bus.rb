@@ -16,8 +16,8 @@ def number_of_passengers()
   return @passengers.length()
 end
 
-def pick_up(passenger1, passenger2)
-  @passengers.push(passenger1, passenger2)
+def pick_up(passenger1)
+  @passengers.push(passenger1)
 end
 
 def drop_off(passenger)
@@ -26,6 +26,13 @@ end
 
 def remove_all_passengers()
   @passengers.clear()
-end 
+end
+
+def pick_up_from_bus_stop(bus_stop)
+  for person in bus_stop.queue()
+    pick_up(person)
+  end
+  bus_stop.empty_queue()
+  end
 
 end
